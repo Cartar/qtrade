@@ -2,7 +2,7 @@
 
 # Qtrade
 
-This is a very basic Python 3 wrapper for the [Questrade API](https://www.questrade.com/api/documentation/getting-started), a Canadian low cost broker.
+This is a very basic Python 3.6+ wrapper for the [Questrade API](https://www.questrade.com/api/documentation/getting-started), a Canadian low cost broker.
 
 ## Installation
 
@@ -78,7 +78,7 @@ aapl, amzn = qtrade.get_quote(['AAPL', 'AMZN'])
 In addition, one can get historical stock quotes via
 
 ```python
-aapl_history = = qtrade.get_historical_data('AAPL', '2018-08-01', '2018-08-21','OneHour')
+aapl_history = qtrade.get_historical_data('AAPL', '2018-08-01', '2018-08-21','OneHour')
 ```
 
 Here, the last input parameter is the interval between quotes. Another option could be `'OneDay'`. For more options, see the [Questrade API description](http://www.questrade.com/api/documentation/rest-operations/enumerations/enumerations#historical-data-granularity).
@@ -117,6 +117,10 @@ Contributions are always appreciated! For example:
 - etc.
 
 There is a test suite that can be run via `python -m pytest`. This project uses `pre-commit`
-and `black` which takes care of automatic code formatting and linting. When setting up the development
-environment, run `pre-commit instal`` to set up the hook. This will run black automatically when
+and `black`, `flake8` and `isort` which takes care of automatic code formatting and linting. When setting up the development
+environment, run `pre-commit install` to set up the hook. This will run all the linting automatically when
 committing code changes.
+
+## Disclaimer
+
+I am in no way affiliated with Questrade and using this API wrapper is licensed via the MIT license.
